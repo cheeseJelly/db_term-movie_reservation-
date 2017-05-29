@@ -1,0 +1,123 @@
+body, html{
+	width:100%;
+	height: 100%;
+}
+
+.container{
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+
+
+
+.contents{
+	position: relative;
+	width:100%;
+}
+
+.login_wrapper{
+	position: relative;
+	width:100%;
+}
+
+.login_header{
+	position: relative;
+	width:100%;
+	height: 180px;
+}
+
+.login_header > .t_title{
+	font-size: 25px;
+	line-height: 25px;
+	font-weight: bold;
+}
+.login_header > .t_body{
+	font-size: 17px;
+	line-height: 17px;
+}
+
+.login_body{
+	position: relative;
+	width:100%;
+	background-color: #eeeeee;
+	height: 300px;
+}
+
+.login_form_wrapper{
+	position: absolute;
+	width:600px;
+	height: 80px;
+	top:50%;
+	left:50%;
+	margin-left:-300px;
+	margin-top: -40px;
+}
+
+.login_form_input_box{
+	position: absolute;
+	width:400px;
+	height: 80px;
+	left:0px;
+	top:0px;
+}
+
+.login_form_btn{
+	position: absolute;
+	right:0px;
+	top:0px;
+	width:200px;
+	height: 49px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #198591;
+	border-radius: 5px;
+	overflow: hidden;
+	text-align: center;
+	font-size: 18px;
+	line-height: 18px;
+	padding-top:31px;
+	cursor: pointer;
+}
+
+.login_form_inputs{
+	position: relative;
+	width:100%;
+	height: 40px;
+}
+.login_form_inputs > div{
+	position: relative;
+	width:200px;
+	height: 40px;
+	float: left;
+}
+
+.login_form_input_header{
+	position: relative;
+	text-align: right;
+}
+
+.login_form_input_text{
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+.login_form_input_text > input{
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+
+.join_btn{
+	position: absolute;
+	width:300px;
+	text-align: left;
+	left:50%;
+	top:200px;
+}
+
+.footer{
+	position: relative;
+	width:100%;
+	height: 80px;
+}
