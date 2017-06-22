@@ -44,14 +44,14 @@
 					</div>
 					<div class='login_body'>
 						<div class='login_form_wrapper'>
-							<form>
+							<form method='post' action='login_ok.php'>
 								<div class='login_form_input_box'>
 									<div class='login_form_inputs'>
 										<div class='login_form_input_header'>
 											로그인ID
 										</div>
 										<div class='login_form_input_text'>
-											<input type='text' />
+											<input type='text' name = 'uid'/>
 										</div>
 									</div>
 									<div class='login_form_inputs'>
@@ -59,17 +59,17 @@
 											비밀번호
 										</div>
 										<div class='login_form_input_text'>
-											<input type='text' />
+											<input type='text' name='upwd' />
 										</div>
 									</div>
 								</div>
 								<div class='login_form_btn'>
-									로그인
+									<input type='submit' value='submit'>로그인
 								</div>
 							</form>
 						</div>
 						<div class='join_btn'>
-							<a href="#">회원가입</a>
+							<a href="join.php">회원가입</a>
 						</div>
 					</div>
 				</div>
