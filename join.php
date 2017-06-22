@@ -32,6 +32,28 @@
 				</div>
 			</div>
 			<div class='contents'>
+			<form name = "join" action="join_confirm.php" method="post">
+			<table border = "1">
+			<tr>
+			<td>ID</td>
+			<td><input type="text" size = "30" name="id"></td>
+			</tr>
+			<tr>
+			<td>Password></td>
+			<td><input type="password" size = "30" name="pwd"></td>
+			</tr>
+			<tr>
+			<td>name</td>
+			<td><input type="text" size="12" maxlength = "10" name="name"></td>
+			</tr>
+			<tr>
+			<td>admin confirm text</td>
+			<td><input type="text" size = "12" name = "is_admin"></td>
+			</tr>
+			</table>
+			<input type="submit" value ="submit">
+			<input type="reset" value="rewrite">
+			</form>
 			</div>
 		</div>
 	</body>
