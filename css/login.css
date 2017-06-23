@@ -62,7 +62,7 @@ body, html{
 	top:0px;
 }
 
-.login_form_btn{
+#login_form_btn{
 	position: absolute;
 	right:0px;
 	top:0px;

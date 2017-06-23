@@ -1,12 +1,5 @@
 <?php
 include_once('config.php');
-$connect = mysql_connect($host, $user, $pw); 
-
-if(!$connect){
-	 die('Could not connect: ' . mysql_error());
-}
-
-mysql_select_db($dbName, $connect) or die('could not select db');
 
 
 if($_POST["uid"] != ""){  // uid값이 있으면

@@ -1,12 +1,9 @@
-<?php
-
-?>
 <html>
 	<head>
 		<title>megacgv</title>
 		<link rel="stylesheet" href="./css/reset.css" />
 		<link rel="stylesheet" href="./css/header.css" />
-		<link rel="stylesheet" href="./css/index.css" />
+		<link rel="stylesheet" href="./css/reserve.css" />
 		<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
 	</head>
 	<body>
@@ -48,12 +45,14 @@
 				</div>
 			</div>
 			<div class='contents'>
-				<div class='section no1'>
-					BIG here
+				<div>Reserve</div>
+				<div class='reserve_form_wrapper'>
+					<form id='reserve_form' method='post' action='reserve_withName.php'>
+						<input type='text' id='m_name_id' name='m_name' />
+						<input type='submit' value='submit' />
+					</form>
 				</div>
-				<div class='section no2'>
-					small here
-				</div>
+
 			</div>
 			<div class='footer'>
 				footer

@@ -4,6 +4,14 @@
 		<link rel="stylesheet" href="./css/reset.css" />
 		<link rel="stylesheet" href="./css/header.css" />
 		<link rel="stylesheet" href="./css/login.css" />
+		<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+			$(window).on('load', function(){
+				$("#login_form_btn").click(function(){
+					$("#login_form").submit();
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<div class='container'>
@@ -44,7 +52,7 @@
 					</div>
 					<div class='login_body'>
 						<div class='login_form_wrapper'>
-							<form method='post' action='login_ok.php'>
+							<form id='login_form' method='post' action='login_ok.php'>
 								<div class='login_form_input_box'>
 									<div class='login_form_inputs'>
 										<div class='login_form_input_header'>
@@ -63,8 +71,8 @@
 										</div>
 									</div>
 								</div>
-								<div class='login_form_btn'>
-									<input type='submit' value='submit'>로그인
+								<div id='login_form_btn'>
+									로그인
 								</div>
 							</form>
 						</div>

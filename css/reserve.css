@@ -9,26 +9,24 @@ body, html{
 	height: 100%;
 }
 
+
+
 .contents{
 	position: relative;
+	float: left;
 	width:100%;
 }
 
-.contents > .section{
+.movie_search_item{
+	position: relative;
+	width:300px;
+}
+.movie_search_item img{
 	position: relative;
 	width:100%;
 }
-
-.contents > .no1{
-	height: 600px;
-}
-
-.contents > .no2{
-	height: 300px;
-}
-
-.footer{
+.movie_search_item_info{
 	position: relative;
 	width:100%;
-	height: 80px;
+	font-weight: bold;
 }

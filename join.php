@@ -4,6 +4,7 @@
 		<link rel="stylesheet" href="./css/reset.css" />
 		<link rel="stylesheet" href="./css/header.css" />
 		<link rel="stylesheet" href="./css/join.css" />
+		<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
 	</head>
 	<body>
 		<div class='container'>

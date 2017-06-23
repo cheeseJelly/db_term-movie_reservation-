@@ -41,9 +41,17 @@
 	border-right:1px solid #e5e5e5;
 	cursor: pointer;
 }
-
 .menu_btn:hover{
 	color:#198591;
+}
+
+.menu_btn a{
+	color: #000000;
+	text-decoration: none;
+}
+.menu_btn a:hover{
+	color: #198591;
+	text-decoration: none;
 }
 
 #reserve_btn{
@@ -66,5 +74,9 @@
 }
 
 #login_btn{
+	width:149px;
+}
+
+#logout_btn{
 	width:149px;
 }
