@@ -15,20 +15,33 @@
 					</div>
 					<div class='menu_bar'>
 						<div class='menu_btn' id='reserve_btn'>
-							예매하기
+							<a href='./reserve.php'>
+								Reserve
+							</a>
 						</div>
-						<div class='menu_btn' id='eval_btn'>
-							평가하기
-						</div>
-						<div class='menu_btn' id='manage_btn'>
-							관리페이지
-						</div>
+						<?php
+							if(isset($_COOKIE["is_admin"])&&($_COOKIE["is_admin"] == 1)){
+								echo "<div class='menu_btn' id='manage_btn'>
+							Manage
+						</div>";
+							}
+						?>
 						<div class='menu_btn' id='mypage_btn'>
-							마이페이지
+							<a href='./mypage.php'>
+								Mypage
+							</a>
 						</div>
-						<div class='menu_btn' id='login_btn'>
-							로그인
-						</div>
+						<?php
+							if(!isset($_COOKIE["user_no"])){
+								echo "<div class='menu_btn' id='login_btn'>
+							<a href='./login.php'>Login</a>
+						</div>";
+							} else{
+								echo "<div class='menu_btn' id='logout_btn'>
+								<a href='./logout.php'>Logout</a>
+								</div>";
+							}
+						?>
 					</div>
 				</div>
 			</div>

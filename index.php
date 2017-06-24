@@ -1,5 +1,8 @@
 <?php
-
+	if(!isset($_COOKIE['user_no'])){
+		// Redirect to login
+		header("location: login.php");
+	}
 ?>
 <html>
 	<head>
@@ -18,29 +21,30 @@
 					</div>
 					<div class='menu_bar'>
 						<div class='menu_btn' id='reserve_btn'>
-							예매하기
-						</div>
-						<div class='menu_btn' id='eval_btn'>
-							평가하기
+							<a href='./reserve.php'>
+								Reserve
+							</a>
 						</div>
 						<?php
 							if(isset($_COOKIE["is_admin"])&&($_COOKIE["is_admin"] == 1)){
 								echo "<div class='menu_btn' id='manage_btn'>
-							관리페이지
+							Manage
 						</div>";
 							}
 						?>
 						<div class='menu_btn' id='mypage_btn'>
-							마이페이지
+							<a href='./mypage.php'>
+								Mypage
+							</a>
 						</div>
 						<?php
 							if(!isset($_COOKIE["user_no"])){
 								echo "<div class='menu_btn' id='login_btn'>
-							<a href='./login.php'>로그인</a>
+							<a href='./login.php'>Login</a>
 						</div>";
 							} else{
 								echo "<div class='menu_btn' id='logout_btn'>
-								<a href='./logout.php'>로그아웃</a>
+								<a href='./logout.php'>Logout</a>
 								</div>";
 							}
 						?>
@@ -54,9 +58,6 @@
 				<div class='section no2'>
 					small here
 				</div>
-			</div>
-			<div class='footer'>
-				footer
 			</div>
 		</div>
 	</body>

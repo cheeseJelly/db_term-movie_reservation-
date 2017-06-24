@@ -12,8 +12,9 @@ else{
 }
 
 $sql = "INSERT INTO user (id, password, name, is_admin) VALUES ('$id','$password','$name','$is_admin')";
-if($mysqli->query($sql)){
-	echo 'success inserting';
+
+if(mysql_query($sql)){
+	//echo 'success inserting';
 	header("location: login.php");
 }
 else{

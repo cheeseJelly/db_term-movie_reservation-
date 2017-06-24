@@ -8,6 +8,6 @@
 		// echo $_COOKIE['user_no'];
 		header("location: index.php");
 	}else{
-		echo "No!";
+		header("location: index.php");
 	}
 ?>

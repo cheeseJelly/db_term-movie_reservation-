@@ -1,0 +1,58 @@
+.mypage_infos{
+	position: relative;
+	width:100%;
+	padding:5px;
+	border-bottom: 1px solid #eeeeee;
+}
+
+.review_item{
+	position: relative;
+	width:100%;
+	padding:5px;
+	border:1px solid #eeeeee;
+}
+.review_item_info{
+	position: relative;
+	width:100%;
+
+}
+.review_item_btns{
+	position: relative;
+	width:100%;
+	padding:1px;
+	height:27px;
+}
+
+.reservation_item{
+	position: relative;
+	width:100%;
+	padding:5px;
+	border:1px solid #eeeeee;
+}
+.reservation_item_info{
+	position: relative;
+	width:100%;
+
+}
+.reservation_item_btns{
+	position: relative;
+	width:100%;
+	padding:1px;
+	height:27px;
+}
+
+.mypage_btns{
+	position: relative;
+	float: left;
+	padding:5px;
+	border-radius: 3px;
+	border:1px solid #dddddd;
+	cursor: pointer;
+	height: 12px;
+	margin-left:8px;
+}
+
+.mypage_btns:hover{
+	color:#EEEEEE;
+	background-color: #198591;
+}
