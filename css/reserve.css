@@ -17,6 +17,64 @@ body, html{
 	width:100%;
 }
 
+.reserve_item{
+	position: relative;
+	width:100%;
+	padding:10px;
+	border: 1px solid #dddddd;
+}
+.reserve_input{
+	position: relative;
+	width:100%;
+	height: 24px;
+	padding:3px;
+}
+.reserve_input_header{
+	position: relative;
+	width:80px;
+	text-align: right;
+	float: left;
+	height: 19px;
+	font-size: 14px;
+	line-height: 14px;
+	padding-top:5px;
+
+}
+.reserve_input_input{
+	position: relative;
+	width:300px;
+	text-align: left;
+	float: left;
+	height: 24px;
+}
+.reserve_input_input input{
+	position: relative;
+	width:100%;
+	height: 24px;
+}
+
+
+.reserve_btn{
+	position: relative;
+	width:110px;
+	height: 22px;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 14px;
+	padding-top:8px;
+	text-align: center;
+	border:1px solid #eeeeee;
+	border-radius: 5px;
+	margin-left:5px;
+	margin-top:5px;
+	cursor: pointer;
+}
+
+.reserve_btn:hover{
+	color:#EEEEEE;
+	background-color: #198591;
+}
+
 .movie_search_item{
 	position: relative;
 	width:300px;

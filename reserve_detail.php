@@ -7,6 +7,7 @@
 include_once('config.php');
 
 $m_name = $_POST['m_name'];
+$director_name = $_POST['m_director'];
 
 ?>
 <html>
@@ -59,8 +60,7 @@ $m_name = $_POST['m_name'];
 			<div class='contents'>
 				<div>Reserve</div>
 				<?php
-					echo $m_name;
-					$sql = "SELECT * FROM `movie` WHERE `title` LIKE '%".$m_name."%'";
+					$sql = "SELECT * FROM `movie` m, `movie_director` md, `people` p WHERE m.`title` LIKE '%".$m_name."%' AND m.`movie_no` = md.`movie_no` AND md.`people_id` = p.`people_id` AND p.`name` LIKE '%".$director_name."%'";
 					$result = mysql_query($sql);
 
 					if(mysql_num_rows($result) == 0){

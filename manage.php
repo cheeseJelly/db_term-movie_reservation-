@@ -37,13 +37,20 @@ include_once('config.php');
 					var theater_no = t.options[t.selectedIndex].value;
 
 					var startTime = document.getElementById('startTime').value;
-					var start_date = document.getElementById('start_date').value;
-					var end_date = document.getElementById('end_date').value;
+					var show_date = document.getElementById('show_date').value;
 
-					if(movie_no != "" && theater_no != "" && startTime != "" && start_date != "" && end_date != ""){
+					if(movie_no != "" && theater_no != "" && startTime != "" && show_date != ""){
 						$("#add_showtime_form").submit();
 					}
 
+				});
+
+				$("#edit_movie_btn").click(function(){
+					$("#edit_movie_form").submit();
+				});
+
+				$("#edit_showtime_btn").click(function(){
+					$("#edit_showtime_form").submit();
 				});
 			});
 		</script>
@@ -64,7 +71,7 @@ include_once('config.php');
 						<?php
 							if(isset($_COOKIE["is_admin"])&&($_COOKIE["is_admin"] == 1)){
 								echo "<div class='menu_btn' id='manage_btn'>
-							Manage
+							<a href='./manage.php'>Manage</a>
 						</div>";
 							}
 						?>
@@ -158,6 +165,34 @@ include_once('config.php');
 					</div>
 					<div class='manage_item'>
 						<div class='manage_header'>
+							Edit movie
+						</div>
+						<form id='edit_movie_form' method='post' action='edit_movie.php'>
+							<div class='manage_input'>
+								<div class='manage_input_header'>
+									Movie :
+								</div>
+								<div class='manage_input_input'>
+									<select name='movie_no2' id='movie_no2'>
+										<?php
+											$sql = "SELECT * FROM `movie`";
+											$r = mysql_query($sql);
+											while($row = mysql_fetch_assoc($r)){
+												$movie_no = $row['movie_no'];
+												$movie_name = $row['title'];
+												echo "<option value=".$movie_no.">".$movie_name."</option>";
+											}
+										?>
+									</select>
+								</div>
+							</div>
+						</form>
+						<div class='manage_btn' id='edit_movie_btn'>
+							Edit movie
+						</div>
+					</div>
+					<div class='manage_item'>
+						<div class='manage_header'>
 							ADD showtime
 						</div>
 						<form id='add_showtime_form' method='post' action='add_showtime.php'>
@@ -207,23 +242,42 @@ include_once('config.php');
 							</div>
 							<div class='manage_input'>
 								<div class='manage_input_header'>
-									start date : 
+									show date : 
 								</div>
 								<div class='manage_input_input'>
-									<input type='date' name='start_date' id='start_date' value='<?php echo date("Y-m-j"); ?>' />
-								</div>
-							</div>
-							<div class='manage_input'>
-								<div class='manage_input_header'>
-									end_date : 
-								</div>
-								<div class='manage_input_input'>
-									<input type='date' name='end_date' id='end_date' value='<?php echo date("Y-m-j"); ?>' />
+									<input type='date' name='show_date' id='show_date' value='<?php echo date("Y-m-j"); ?>' />
 								</div>
 							</div>
 						</form>
 						<div class='manage_btn' id='add_showtime_btn'>
 							ADD showtime
+						</div>
+					</div>
+					<div class='manage_item'>
+						<div class='manage_header'>
+							Edit showtime
+						</div>
+						<form id='edit_showtime_form' method='post' action='edit_showtime.php'>
+							<div class='manage_input'>
+								<div class='manage_input_header'>
+									Showtime :
+								</div>
+								<div class='manage_input_input'>
+									<select name='showtime_id' id='showtime_id'>
+										<?php
+											$sql = "SELECT * FROM `movie` m, `showtime` s, `theater` t WHERE s.movie_no = m.movie_no AND t.theater_no = s.theater_no";
+											$r = mysql_query($sql);
+											while($row = mysql_fetch_assoc($r)){
+												$showtime_text = "Movie '".$row['title']."' - theater '".$row['theater_name']."' ".$row['show_date']." ".$row['startTime'];
+												echo "<option value=".$row['showTime_id'].">".$showtime_text."</option>";
+											}
+										?>
+									</select>
+								</div>
+							</div>
+						</form>
+						<div class='manage_btn' id='edit_showtime_btn'>
+							Edit showtime
 						</div>
 					</div>
 				</div>

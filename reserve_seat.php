@@ -20,6 +20,34 @@ $success = true;
 $result = mysql_query("SET AUTOCOMMIT=0;");
 $result = mysql_query("START TRANSACTION;");
 
+// check points > price
+$u_sql = "SELECT * FROM `user` WHERE `user_no` = ".$user_no;
+$u_r = mysql_query($u_sql);
+if(!$u_r){
+	//	mysql_query("rollback;");
+	echo $u_sql;
+	echo "<br />ROLLBACK here";
+	$success = false;	
+}else{
+	$row = mysql_fetch_assoc($u_r);
+	$avail_point = $row['point'];
+	if($avail_point < $price){
+		echo "POINT is too low.";
+		//echo "ROLLBACK";
+		$success = false;
+	}else{
+		// update point
+		$after_point = $avail_point - $price;
+		$p_sql = "UPDATE `user` SET `point` = '".$after_point."' WHERE `user_no` = ".$user_no;
+		$p_r = mysql_query($p_sql);
+		if(!p_r){
+			echo $p_sql;
+			echo "ROLLBACK";
+			$success = false;
+		}
+	}
+}
+
 $t_sql = "INSERT INTO `ticket_info` (`showtime_id`, `seat_no`, `type_id`, `price`) VALUES ( ".$showtime_id.", '".$seat_no."', ".$ticket_type.", ".$price.")";
 $t_r = mysql_query($t_sql);
 if(!$t_r){
@@ -54,11 +82,11 @@ if(!$b_result){
 
 if(!$success){
 	mysql_query("ROLLBACK;");
-	echo "Rollback!";
+	//echo "Rollback!";
 }else{
 	mysql_query("COMMIT");
-	echo "DONE!";
-	echo "<script>alert('Reservation is done!');</script>";
+	//echo "DONE!";
+	//echo "<script>alert('Reservation is done!');</script>";
 	header("location: index.php");
 }
 

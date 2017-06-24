@@ -11,6 +11,17 @@
 		<link rel="stylesheet" href="./css/header.css" />
 		<link rel="stylesheet" href="./css/reserve.css" />
 		<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+		<script type='text/javascript'>
+			$(window).on('load', function(){
+				$("#search_movie_btn").click(function(){
+					$("#search_form").submit();
+				});
+
+				$("#detail_search_btn").click(function(){
+					$("#detail_search_form").submit();
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<div class='container'>
@@ -28,7 +39,7 @@
 						<?php
 							if(isset($_COOKIE["is_admin"])&&($_COOKIE["is_admin"] == 1)){
 								echo "<div class='menu_btn' id='manage_btn'>
-							Manage
+							<a href='./manage.php'>Manage</a>
 						</div>";
 							}
 						?>
@@ -52,12 +63,51 @@
 				</div>
 			</div>
 			<div class='contents'>
-				<div>Reserve</div>
-				<div class='reserve_form_wrapper'>
-					<form id='reserve_form' method='post' action='reserve_withName.php'>
-						<input type='text' id='m_name_id' name='m_name' />
-						<input type='submit' value='submit' />
-					</form>
+				<div class='reserve_items'>
+					<div class='reserve_item'>
+						<div class='reserve_header'>
+							Search movie
+						</div>
+						<form id='search_form' method='post' action='reserve_withName.php'>
+							<div class='reserve_input'>
+								<div class='reserve_input_header'>
+									Title : 
+								</div>
+								<div class='reserve_input_input'>
+									<input type='text' id='m_name_id' name='m_name' />
+								</div>
+							</div>
+						</form>
+						<div class='reserve_btn' id='search_movie_btn'>
+							Search movie
+						</div>
+					</div>
+					<div class='reserve_item'>
+						<div class='reserve_header'>
+							Detail Search
+						</div>
+						<form id='detail_search_form' method='post' action='reserve_detail.php'>
+							<div class='reserve_input'>
+								<div class='reserve_input_header'>
+									Title : 
+								</div>
+								<div class='reserve_input_input'>
+									<input type='text' id='m_name_id' name='m_name' />
+								</div>
+							</div>
+							<div class='reserve_input'>
+								<div class='reserve_input_header'>
+									Director : 
+								</div>
+								<div class='reserve_input_input'>
+									<input type='text' id='m_director' name='m_director' />
+								</div>
+							</div>
+						</form>
+						<div class='reserve_btn' id='detail_search_btn'>
+							Detail Search
+						</div>
+					</div>
 				</div>
 
 			</div>

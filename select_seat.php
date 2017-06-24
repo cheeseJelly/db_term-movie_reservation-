@@ -74,7 +74,7 @@ $showtime_id = $_POST['showtime_id'];
 						<?php
 							if(isset($_COOKIE["is_admin"])&&($_COOKIE["is_admin"] == 1)){
 								echo "<div class='menu_btn' id='manage_btn'>
-							Manage
+							<a href='./manage.php'>Manage</a>
 						</div>";
 							}
 						?>
